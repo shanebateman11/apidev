@@ -1,0 +1,99 @@
+---
+openapi: 3.0.1
+info:
+  title: defaultTitle
+  description: defaultDescription
+  version: "0.1"
+servers:
+- url: http://localhost:8080
+paths:
+  /employees:
+    get:
+      description: Auto generated using Swagger Inspector
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                "0":
+                  value: '[{"emp_id":1,"emp_name":"Jake","emp_dept":"USA","emp_salary":5000,"emp_dob":"1999-04-22T16:00:00.000+00:00"},{"emp_id":2,"emp_name":"Sandra","emp_dept":"APAC","emp_salary":10000,"emp_dob":"1988-06-16T16:00:00.000+00:00"},{"emp_id":3,"emp_name":"Amad","emp_dept":"ITIS","emp_salary":15000,"emp_dob":"1985-11-04T16:00:00.000+00:00"},{"emp_id":4,"emp_name":"Guru","emp_dept":"HRM","emp_salary":17000,"emp_dob":"1979-01-28T16:30:00.000+00:00"},{"emp_id":8,"emp_name":"Imran","emp_dept":"APAC","emp_salary":3800,"emp_dob":"1999-10-01T16:00:00.000+00:00"},{"emp_id":10,"emp_name":"Elastic","emp_dept":"HRM","emp_salary":8400,"emp_dob":"1992-03-31T16:00:00.000+00:00"},{"emp_id":11,"emp_name":"Curtis","emp_dept":"APAC","emp_salary":11200,"emp_dob":"1997-09-28T16:00:00.000+00:00"}]'
+      servers:
+      - url: http://localhost:8080
+    servers:
+    - url: http://localhost:8080
+  /add/employees:
+    post:
+      description: Auto generated using Swagger Inspector
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add_employees_body'
+            examples:
+              "0":
+                value: "{\r\n        \"emp_name\": \"Alaika\",\r\n        \"emp_dept\": \"APAC\",\r\n        \"emp_salary\": 10200,\r\n        \"emp_dob\":\"1998-11-11\"\r\n    }"
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+      servers:
+      - url: http://localhost:8080
+    servers:
+    - url: http://localhost:8080
+  /update/employees/12:
+    put:
+      description: Auto generated using Swagger Inspector
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/employees_12_body'
+            examples:
+              "0":
+                value: "{\r\n        \"emp_id\": 12,\r\n        \"emp_name\": \"Alaika\",\r\n        \"emp_dept\": \"DevOPS\",\r\n        \"emp_salary\": 11100,\r\n        \"emp_dob\":\"1998-11-11\"\r\n    }"
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+      servers:
+      - url: http://localhost:8080
+    servers:
+    - url: http://localhost:8080
+  /delete/employees/12:
+    delete:
+      description: Auto generated using Swagger Inspector
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+      servers:
+      - url: http://localhost:8080
+    servers:
+    - url: http://localhost:8080
+components:
+  schemas:
+    add_employees_body:
+      type: object
+      properties:
+        emp_salary:
+          type: integer
+        emp_name:
+          type: string
+        emp_dept:
+          type: string
+        emp_dob:
+          type: string
+    employees_12_body:
+      type: object
+      properties:
+        emp_salary:
+          type: integer
+        emp_name:
+          type: string
+        emp_dept:
+          type: string
+        emp_dob:
+          type: string
+        emp_id:
+          type: integer
